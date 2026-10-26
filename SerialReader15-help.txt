@@ -1,0 +1,332 @@
+Program SerialReader - readme/help file
+== = = = = = = = = = = = = = = = = = = = = =
+
+actual version 15
+= = = = = = = = =
+Date of last finalising : 2026-10-25
+
+Upgrade :
+=========
+This is uprade of version 14 with many improvements.
+
+Preface :
+=========
+This readme/help is for program SerialReader - version 15 .
+
+I have created this program for serial devices what can communicate 
+via USB-RS232 like Arduino etc. coupled with modules for data collecting
+and reading from harddiscs or flashiscs.
+
+Producted data are in format .txt, .tab or .bpm files .
+
+I have inform and public this readme/help and next files include .exe file 
+(packed in .zip with all folders etc.) 
+about actual version of this program on Github.
+
+Program was created in Delphi XE Starter 
+and it is working under operation system Windows.
+
+Program was created by Pavel Oupicky, rentier and home worker.
+
+Program is distributed by author as freeware for end users .
+   
+Author takes no liability towards of any use of his program.
+
+At 25.10.2026 					Pavel Oupicky
+
+Contact  on author : pavel.oupicky@seznam.cz
+
+Default known problems in my programs  :
+= = = = = = = = = = = = = = = = = = = = =
+- this program is the compilation of many of previous programs created by author,
+- so some functions of his programs are inserted but are in actual version not ready for use.
+- Window OS can open many of windows, but when my programs are running, 
+  it is not impossible use OS Windows close, mini- or maximalization of ones, 
+  as the OS Windows and Deplphi XE Starter program cannot right open or closed them,
+  so if my programs are running, you do not use them ones,
+  or runned program and data will be lost.
+- Delphi XE Starter can product  graphs  format .bmp only about 2 MB 
+  and you must change them then to another format self.
+
+Basic description of program :
+= = = = = = = = = = = = = = = = 
+
+Communication:
+= = = = = = = =
+Program was created for devices what can communicate with PC OS protocol RS232,
+so for communication between personal computers
+with connectors RS232 or USB converters to RS232
+and devices like microcomputers Arduinos or Espressif 
+and their data modules for example.
+
+Home (Main) page of program:
+= = = = = = = = = = = = = = =
+On the Main (Home) window are buttons for calling next functions of this program.
+
+
+There is listbox with pre-defined files with parameters for your next measurig
+and you can choose the one from this listbox.
+
+There are in this file parameters for next measuring 
+and these must be pre-set in the regular form what includes
+name of program and version etc. .
+This right form is controlled and errors are reported.
+
+Description of basic buttons on home page in upper line:
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+About
+- basic description of program
+
+Memo
+- memory for notes saved on PC in the root folder
+
+Graphs
+- list of pre-defined parameters  for graphs
+
+Data Test (checkbox)
+ - if you will set it on, you can see the simply demo of program 
+   without a serial device must be connected.
+
+Data
+- read recorded data  measured by serial devices with  sensores etc.
+  saved on harddisc in Data folder in .txt format
+
+Help
+-  reads this readme/help file and or similar txt files
+
+Hex counts
+- some transfers between bits, bytes and hexbytes
+  rest from my previous programs
+
+
+Description of basic buttons on home page in bottom line:
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Parameters
+- primary readed basic parameters for measurements, data, graph etc.
+
+Inputs
+- list of inputs in program readed from .par file
+
+Tasks
+- list of tasks used for reading of serial data readed from .par file
+
+Com
+- parameters for communication via com ports and their timings
+ 
+Measure
+- start for measurement process
+
+Menu
+- list of files from previous measurement for next transfer to tabs or graphs
+  when there are a data from actual or previous  measuremet, it is possible to see them 
+  or get and save them into tables or graphs
+
+Serial Test
+- call and read data from serial devices
+- basic test of communication between PC and serial devices like Arduino etc.
+
+End
+- end of program
+
+Example of initial file (.ini)
+= = = = = = = = = = = = = = = 
+
+Purpose: 
+- when program is starting, it call this .ini file at first
+
+SerialReader/15/ini
+Initial file for program SerialReader15
+20.10.2026/17:54:11
+User: free
+Path:Par
+File:SerialReader15-RF-com4-9600.par
+end
+
+- if you choose your file with parameters, you can save
+  this file as your .ini by click on button Save Init
+  and in the next time this file of parameters will be open again.
+
+
+Parameters for tests and measurement (.par file):
+= = = = = = = = = = = = = = = = = = = = = = = = =
+Short description:
+- basic and driver parameters must be set before the programm will start
+- basic parameters must be set in file with extension .par in Par folder
+- driver (port - com) parameters must be set in file with extension .com in Com folder
+- parameters for graphs are in the file with extension .grp in  Grp folder
+- help  file name for program must be set in file with extension .txt  in the Help folder
+- task parameters are set direct in .par file
+
+Example of .par file
+= = = = = = = = = = =
+SerialReader15/params
+Registrace teplot, vlhkosti a tlaku
+System Arduino+RF433MHz+BME280
+Date:2026-10-08*12:22
+Device:Arduino+RF433MHz+BME280
+Protocol:RF/RF433MHz 
+Port:Com,4,9600,8,1,0
+Timing:Timer=10,Sleep=10,Wait=200,Timeout=100
+Inputs:3
+1:RFBME/2,0,99.99,1.0/C,Tepm,Temperature
+2:RFBME/2,0,99.99,1.0/%,Hum,Humidity
+3:RFBME/2,0,999.999,0.1/mbar,Pres,air press in atmosfere
+Tasks:3
+All,N,1,2,3,end
+TH,N,1,2,end
+AP,N,3,end
+Measured interval:0
+Data:Data
+Help:Help\DataSerial10-help.txt
+Graf-par:Grp\Grf-DataSerial-RFBME-en.grp
+end
+
+Notes:
+Protocol:RF (or RFBME) will be set as protocol in new recorded data files
+
+Data:Data is name of folder for all saved data include tabs and graphs
+
+Measured interval:0 
+ - is the rest from my previos programs and here is set to zero already 
+
+Example of file for com port (.com file):
+= = = = = = = = = = = = = = = = = = = = = 
+DataSerial/10/com
+Parameters for communication with Arduinos and Esp via port Com
+04.06.2026*13:47:45
+Port:Com,3,9600,8,1,0
+Timing:Timer=10,Sleep=10,Wait=300,Timeout=100
+end
+
+Note:
+- Port parameters must pass to internal set given by OS Windows (in Administrator com devices)!!
+- this example : Com3, baud rate 9600, 8 bits, 1 stop bit, no parity bit
+- Timing : it defines internal set parameters for communication between PC and serial devices
+
+Example of commands for tasks in .par file:
+= = = = = = = = = = = = = = = = = = = = = =
+
+Tasks:3 = number of tasks
+All,N,1,2,3,end	//name of task,Command,inputs ...,end
+TH,N,1,2,end
+AP,N,3,end
+
+Example of file for graphs (.grp file):
+= = = = = = = = = = = = = = = = = = = = = 
+
+SerialReader11/parameters/graphs
+Graph:SerialReader10 - test
+10.6.2026/21:25:21
+0*1*5*min*Axe of time for graph
+0*1*5*2*min*Axe of time for measuring
+0*50*250*a.u.*Axe of intensity for graph
+0*50*250*a.u.*Axe of intensity for measuring - basic
+0*10*50*a.u.*Axe of intensity for measuring - user
+1*1*.point for data on x and y
+1*0*rastr x and rastr y , 0 = no rastr
+Color of line*type of line*width of line from 0 to 8 works
+clBlue*psSolid*3
+clGreen*psSolid*2
+clRed*psSolid*1
+clBlack*psDot*0
+clLima*psDash*2
+clFuchsia*psDashDot*1
+clAqua*psDashDotDot*2
+clPurple*psSolid*0
+end
+
+Basic RS232 commands:
+= = = = = = = = = = =
+This commans are readable in program SerialReader versions 12 to 15 .
+They are suitable for devices with Arduinos or with ESP-NOW system master and slaves
+
+Command	Answer
+- - - - - - - -
+(Cr is carriage return, LF is Line Feed)
+A	*A,400,#,CRLF   number is readed analog data example
+B	*B,399,299,199,099,#,CRLF	
+C	*C,401,etc.#,CRLF
+D	neither realised nor used
+E20	*P,20,400,500,100,#,CRLF = returned all parameters	
+	   20, data time step in mikroseconds
+P	*P,20,300,500,10,#,CRLF = read parameters
+
+Note:
+- - - 
+All this commands can product Arduino with sensores
+with my sketch RF_433MHz_SRX882_BME280_receiver_2.ino for examle
+
+Example of data :
+- - - - - - - - -
+Arduino Nano as RF433 MHz receiver - data examle
+RF-433MHz-SRX882-BME280-receiver-2
+RF 433 Mhz  receiver of telemetry data
+*19.03,50.71,9828.83,#,
+*19.37,50.23,9829.49,#,
+*19.37,50.04,9831.02,#,
+
+
+Simply manual how to use SerialReader15
+= = = = = = = = = = = = = = = = = = = = 
+
+Main(home) window
+- - - - - - - - -
+- after main(home) window is on and OK, push Device Set Button
+- or Com Button, if you are not sure if your com port is set well
+- Open Port window will be shown
+
+Com window
+- - - - - -
+- push Open button
+- if handle of predefined com port will set on, push Purge button and purge this comm port
+- choose Device Par button and Osc Par window will be shown
+
+Device Set window
+- - - - - - - - -
+- choose Q command from Call combobox and push Call button
+- if answer will be OK and green round shape light will be on, you can continue with next parameters
+- for example choose G Y Led from Call combobox and push Call button
+- yellow led on your device (if is installed) will light on
+- choose I command from Serial Commands combobox
+- push Read button and wait  for answer in Answer or Result field
+- if your asked device is on, the one will be confirmed
+- or you will be asked to accept it
+- or choose K command from Serial Commands combobox
+- choose nr of asked device from device combobox
+- push Set button and wait  for answer in Answer or Result field
+- when this answer will repeat your slave device number, this one is on-line
+- if your choosed device is on, it will be confirmed, else zero will be in answer
+- push Read Par button to read pre-set parameters for Measure windows
+- when your device is connected and it is on,
+- push Data button to read data from your device via command A to be sure your device is measured OK 
+
+Measure window
+- - - - - - - -
+- choose your task from listbox with tasks
+- choose plotter type from plotter combobox A or B (more quick when data reading)
+- if you need record of data, cross Record checkbox, New file button will be wisible
+- occasionally write note of you to Note field
+- press New file button to set the header of this new file what will be used for next data registration
+- press Graph Par button to choose the suitable parameters for time and data axes
+- press Graph and  Graph window will be shown
+
+Grapf window
+- - - - - - -
+- set in Radiobutton Time axe for the type of graph time axe shift 
+  when this time will be on the end of time range
+- see and follow your measuring data, then press Stop button
+- after all measuring ends, press Task button
+- confirm if you want to save your data or on your hard disc
+  or into databox for next analysation in tabs or graphs.
+- press Menu button and Menu window will shown
+
+Menu window
+- - - - - -
+- clik on the column with data
+- choose Tab Par or Graph Par
+- set parameters for table or graph
+- click on the Table or Graph Image buttons
+
+= = = = End of Help file = = = =
