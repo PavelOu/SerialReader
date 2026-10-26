@@ -1,0 +1,6 @@
+Arduino Nano as RF433 MHz receiver - data examle
+RF-433MHz-SRX882-BME280-receiver-2
+RF 433 Mhz  receiver of telemetry data
+*19.03,50.71,9828.83,#,
+*19.37,50.23,9829.49,#,
+*19.37,50.04,9831.02,#,
